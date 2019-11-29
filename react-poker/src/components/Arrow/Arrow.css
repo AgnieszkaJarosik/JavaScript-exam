@@ -1,0 +1,27 @@
+.arrow {
+  padding: 1rem;
+  margin: 1rem;
+  width: 1.5rem;
+  position: fixed;
+  bottom: 0;
+  border-radius: 5px;
+  background-color: #153723;
+  border: 2px solid #07120c;
+  color: ivory;
+  font-weight: bold;
+  transition: all ease .1s;
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+.arrow:hover {
+  background-color: #235c3b;
+  border: 2px solid black;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.arrow i {
+  color: #fff;
+}

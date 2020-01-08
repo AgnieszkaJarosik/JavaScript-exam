@@ -12,7 +12,7 @@ function GameView ({cards, text, onClick, onArrowClick}) {
       <Displayer text={text} />
       <div className="gameContainer">
         <Cards cards={cards} />
-        <Button text="Sprawdź układ"
+        <Button text="Check kards"
             class="gameButton"
             onClick={onClick}  />
       </div>

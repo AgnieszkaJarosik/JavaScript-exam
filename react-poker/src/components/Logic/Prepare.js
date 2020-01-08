@@ -29,18 +29,11 @@ while(random.length < number) {
   });
   if(!drawn) random.push(cards[num]);
 }
-sortCards(random);
+random.sort((a, b) => a.weight - b.weight);
 return random;
 }
 
-function sortCards (cards) {
-  cards.sort((a, b) => a.weight - b.weight);
-  return cards;
-}
-
-
 module.exports = {
 createCards,
-drawCards,
-sortCards
+drawCards
 }

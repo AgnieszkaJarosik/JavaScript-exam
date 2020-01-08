@@ -4,9 +4,9 @@ import Card from '../Card/Card';
 import './Cards.css';
 
 function Cards (props) {
-  if(props.cards){
+  if ( props.cards ) {
     return <div className="cardsContainer">
-      {props.cards.map(card => {
+      {props.cards.map( card => {
         return <Card key={card.id}
                     id={card.id}
                     src={card.src}

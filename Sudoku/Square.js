@@ -1,8 +1,9 @@
 class Square {
-  constructor( value, posX, posY ) {
+  constructor( value, posX, posY, isEmpty=true ) {
     this.value = value;
     this.posX = posX;
     this.posY = posY;
+    this.isEmpty = isEmpty;
   }
 
   occurred = {
@@ -50,20 +51,20 @@ class Square {
   }
 
   checkValue(grid) {
-    this.readRow(grid);
-    this.readColumn(grid);
-    this.readSquare(grid);
-
     if (!this.value) {
-      const numbers = Object.keys(this.occurred).filter(
-        number => !this.occurred[number]
-      );
+      this.readRow(grid);
+      this.readColumn(grid);
+      this.readSquare(grid);
+
+      const numbers = Object.keys(this.occurred).filter( number => !this.occurred[number] );
 
       if (numbers.length === 1) {
         this.value = Number(numbers[0]);
+        return true;
       }
       return false;
     }
+    return true;
   }
 }
 

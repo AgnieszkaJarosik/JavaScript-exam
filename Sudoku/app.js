@@ -5,7 +5,11 @@ const { logSudokuGrid } = require("./log");
 const initSudokuGrid = arr => {
   return arr.map((row, indexY) => {
     return row.map((cell, indexX) => {
+      if( cell ) {
+        return new Square(cell, indexX, indexY, false);
+      } else {
         return new Square(cell, indexX, indexY);
+      }
     });
   });
 };
@@ -31,5 +35,5 @@ const solveSudoku = (grid => {
 
 })(sudokuGrid);
 
-console.log(`\n RESOLVED SUDOKU`);
+console.log(`\n SOLVED SUDOKU`);
 logSudokuGrid(sudokuGrid);

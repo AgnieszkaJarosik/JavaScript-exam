@@ -1,37 +1,36 @@
 const returnRandomArray = (arr) => {
-  const randomArray = [];
+  const randomIndexesArray = [];
 
-  while (randomArray.length < arr.length) {
+  while (randomIndexesArray.length < arr.length) {
     let random = Math.floor( Math.random() * arr.length);
     let occured = false;
-    for (let i=0; i<randomArray.length; i++) {
-      if (random === randomArray[i]) {
+    for (let i=0; i<randomIndexesArray.length; i++) {
+      if (random === randomIndexesArray[i]) {
         occured = true;
       }
     }
     if (occured===false) {
-      randomArray.push(random);
+      randomIndexesArray.push(random);
     }
   }
-  return randomArray;
+  return randomIndexesArray;
 }
 
-const calculateSum = (originalArr, arr) => {
+const calculateSum = (originalArr, indexesArr) => {
   let result = 0;
-  for (let i=0; i<arr.length; i++) {
-    let index = arr[i];
+  for (let i=0; i<indexesArr.length; i++) {
+    let index = indexesArr[i];
     result += originalArr[index];
   }
   return result;
 }
 
-const compareValues = (originalArr, arr, counter) => {
-  const one = arr.splice(0,counter);  
+const compareValues = (originalArr, indexesArr, counter) => {
+  const one = indexesArr.splice(0,counter);  
   const oneSum = calculateSum(originalArr, one);
-  const two = arr.splice(0, counter);
+  const two = indexesArr.splice(0, counter);
   const twoSum = calculateSum(originalArr, two)
-  const three = arr.splice(0,counter);
-  const threeSum = calculateSum(originalArr, three);
+  const three = indexesArr.splice(0,counter);
 
   if (oneSum > twoSum) {
     return one;
@@ -43,7 +42,7 @@ const compareValues = (originalArr, arr, counter) => {
 }
 
 module.exports = {
-  returnRandomArray: returnRandomArray,
-  calculateSum: calculateSum,
-  compareValues: compareValues
+  returnRandomArray,
+  calculateSum,
+  compareValues
 }

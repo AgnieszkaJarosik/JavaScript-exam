@@ -12,7 +12,7 @@ function StartView ({cards, text, onCardClick, onClick}) {
       <Displayer text={text} />
       <div className="container">
         <Cards cards={cards} onClick={onCardClick} />
-        <Button text="Wylosuj karty"
+        <Button text="Draw cards"
             class="startButton"
             onClick={onClick}  />
       </div>

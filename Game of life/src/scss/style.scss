@@ -1,0 +1,70 @@
+/* Background pattern from Toptal Subtle Patterns */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+$button-color: rgb(51, 51, 51);
+$disabled-button-color: rgba(128, 128, 128, 0.5);
+
+body {
+ //background-image: url("../img/background.png");
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+  margin: 1.2rem 0;
+  text-shadow: gray;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+
+button {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: $button-color;
+  padding: 0.5rem;
+  margin: 0 1rem;
+  width: 6.5rem;
+  height: 2.8rem;
+  border: 2px solid $button-color;
+  border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(256,256,256);
+    border-color: $button-color;
+    color: $button-color;
+  }
+
+  &:disabled {
+    background-color: $disabled-button-color;
+    color: rgba(51, 51, 51, 0.5);
+    border: 2px solid $disabled-button-color;
+
+    &:hover {
+      cursor: default;
+      background-color: $disabled-button-color;
+      color: rgba(51, 51, 51, 0.5);
+      border: 2px solid $disabled-button-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+

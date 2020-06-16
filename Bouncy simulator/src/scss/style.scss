@@ -1,0 +1,88 @@
+$main-color: #3F3F3F;
+$minor-color: #f2f2f2;
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+body{
+  background-image: url("../img/background.png");
+  font-size: 16px;
+  color: $minor-color;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.aside{
+  align-self: flex-start;
+}
+
+h1{
+  margin: 5rem 1rem;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Monoton', cursive;
+  font-size: 3.2rem;
+  max-width: 25rem;
+}
+
+nav{
+  margin-top: 10rem;
+  align-self: flex-start;
+}
+
+.start{
+  width: 10rem;
+  height: 3rem;
+  padding: .7rem;
+  text-align: center;
+  margin: 1rem 0 2rem 4rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: $main-color;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.canvasContainer{
+  margin-left: 3rem;
+}
+
+#ball{
+  position: absolute;
+}
+
+#board{
+  position: absolute;
+}
+
+@media only screen and (max-width: 850px) {
+  .container{
+    flex-direction: column;
+  }
+
+  h1{
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  nav{
+    margin: 1rem;
+  }
+
+  .start{
+    margin: 1rem;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .canvasContainer{
+    margin: 0;
+  }
+}
